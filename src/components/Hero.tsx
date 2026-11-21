@@ -7,40 +7,44 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-16">
+    <section
+      id="hero"
+      className="relative min-h-screen w-full flex flex-col justify-center items-center overflow-x-clip pt-24 pb-12"
+    >
+      {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-ee-dark via-ee-panel to-ee-dark" />
+
       <div className="absolute inset-0 -z-10 opacity-30 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-ee-cyan/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-ee-copper/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-ee-cyan/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-ee-copper/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
-        
-        {/* STATUS */}
-        <div className="mb-8 flex items-center justify-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-ee-cyan animate-pulse" />
-          <span className="text-ee-cyan text-sm font-mono tracking-widest">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+
+        {/* TOP TAGLINE */}
+        <div className="mb-6 sm:mb-8 flex items-center justify-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-ee-cyan animate-pulse shrink-0" />
+          <span className="text-ee-cyan text-xs sm:text-sm font-mono tracking-widest">
             Think. Design. Innovate.
           </span>
         </div>
 
-        {/* NAME - TOP */}
+        {/* NAME */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full max-w-full text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-2 tracking-tight leading-tight break-words"
+          className="w-full text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-2 tracking-tight leading-tight"
         >
           Ravish M K
         </motion.h1>
 
-        {/* DESIGNATION - BELOW NAME */}
-        
+        {/* DESIGNATION */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-base sm:text-lg md:text-2xl font-medium text-ee-cyan mb-8 px-2"
+          className="text-base sm:text-lg md:text-2xl font-medium text-ee-cyan mb-6 sm:mb-8"
         >
           Diploma Electrical Engineer
         </motion.p>
@@ -50,7 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-lg md:text-xl text-ee-slate mb-10 max-w-2xl leading-relaxed"
+          className="w-full max-w-2xl text-base sm:text-lg md:text-xl text-ee-slate mb-8 sm:mb-10 leading-relaxed px-1"
         >
           Creative and proactive circuit designer specializing in circuit
           design and analysis. Final-year diploma student in Electrical &
@@ -58,7 +62,7 @@ export default function Hero() {
         </motion.p>
 
         {/* BUTTONS */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <div className="w-full flex flex-col sm:flex-row gap-4 justify-center mb-12 sm:mb-16">
           <a
             href="#projects"
             className="group relative px-8 py-4 bg-white text-ee-dark font-semibold rounded-lg overflow-hidden transition-all hover:bg-ee-cyan hover:text-ee-dark"
@@ -76,8 +80,8 @@ export default function Hero() {
         </div>
 
         {/* CIRCUIT ANIMATION */}
-        <div className="relative z-10 w-full max-w-4xl">
-          <CircuitCanvas className="w-full h-[400px] md:h-[520px] rounded-2xl border border-ee-border/50 shadow-2xl shadow-ee-cyan/10" />
+        <div className="relative z-10 w-full max-w-4xl min-w-0">
+          <CircuitCanvas className="w-full h-[280px] sm:h-[400px] md:h-[520px] rounded-2xl border border-ee-border/50 shadow-2xl shadow-ee-cyan/10" />
         </div>
 
         {/* BOTTOM SIGNAL */}
@@ -85,7 +89,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-12 flex items-center justify-center gap-2 text-ee-slate/60 text-sm"
+          className="mt-8 sm:mt-12 flex items-center justify-center gap-2 text-ee-slate/60 text-sm"
         >
           <MotionCurve color={0x00d4ff} width={120} height={3} />
           <span className="font-mono text-xs uppercase tracking-widest">
