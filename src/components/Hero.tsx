@@ -1,8 +1,5 @@
 
 'use client';
-
-import CircuitCanvas from './CircuitCanvas';
-import { MotionCurve } from './MotionCurve';
 import { motion } from 'framer-motion';
 
 export default function Hero() {
@@ -78,26 +75,6 @@ export default function Hero() {
             <span className="relative z-10">Contact Me</span>
           </a>
         </div>
-
-        {/* CIRCUIT ANIMATION */}
-        <div className="relative z-10 w-full max-w-4xl min-w-0">
-          <CircuitCanvas className="w-full h-[280px] sm:h-[400px] md:h-[520px] rounded-2xl border border-ee-border/50 shadow-2xl shadow-ee-cyan/10" />
-        </div>
-
-        {/* BOTTOM SIGNAL */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-8 sm:mt-12 flex items-center justify-center gap-2 text-ee-slate/60 text-sm"
-        >
-          <MotionCurve color={0x00d4ff} width={120} height={3} />
-          <span className="font-mono text-xs uppercase tracking-widest">
-            signal active
-          </span>
-          <MotionCurve color={0x00d4ff} width={120} height={3} />
-        </motion.div>
-
       </div>
     </section>
   );
