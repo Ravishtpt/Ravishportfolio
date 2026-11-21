@@ -14,9 +14,8 @@ const EXPERIENCE: EducationEntry[] = [
     role: 'Diploma in Electrical & Electronics Engineering',
     company: 'Thiagarajar Polytechnic College, Salem',
     date: '2024–2027',
-    location: 'Final Year • 94.08%',
-    description:
-      'Currently in final year (up to 4th Semester) with 94.08% aggregate. Specializing in circuit design and analysis.',
+    location: 'Final Year • 94.95%',
+    description: 'Currently in final year (up to 4th Semester) with 94.95% aggregate. Specializing in circuit design and analysis.',
     logo: '/tpc-logo.png',
   },
   {
