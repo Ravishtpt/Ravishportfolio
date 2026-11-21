@@ -1,8 +1,9 @@
+
 'use client';
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { Menu, X, Zap, CircuitBoard, GraduationCap } from 'lucide-react';
+import { Menu, X, CircuitBoard } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const NAV_LINKS = [
@@ -11,7 +12,6 @@ const NAV_LINKS = [
   { href: '#projects', label: 'Projects' },
   { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
-  { href: '#contact', label: 'Contact' },
 ];
 
 export default function Navbar() {
@@ -26,6 +26,8 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+
+          {/* Logo */}
           <Link
             href="#hero"
             className={cn(
@@ -34,9 +36,12 @@ export default function Navbar() {
             )}
           >
             <CircuitBoard className="h-5 w-5 text-ee-cyan" />
-            <span className="circuit-text">Ravish<span className="text-ee-cyan">.eee</span></span>
+            <span className="circuit-text">
+              Ravish<span className="text-ee-cyan">.eee</span>
+            </span>
           </Link>
 
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {NAV_LINKS.map((link) => (
               <Link
@@ -47,6 +52,8 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Single Contact Button */}
             <a
               href="#contact"
               className={cn(
@@ -59,21 +66,30 @@ export default function Navbar() {
             </a>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 text-ee-slate hover:text-white"
-              aria-label="Open menu"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </button>
           </div>
+
         </div>
       </div>
 
+      {/* Mobile Navigation */}
       {isOpen && (
         <div className="md:hidden bg-ee-dark border-b border-ee-border/40">
           <div className="max-w-7xl mx-auto px-4 py-6 space-y-4">
+
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
@@ -87,6 +103,19 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Mobile Contact Link */}
+            <a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className={cn(
+                'block px-4 py-3 rounded-lg text-base font-medium',
+                'text-ee-cyan hover:bg-ee-cyan/10 transition-colors',
+              )}
+            >
+              Contact
+            </a>
+
           </div>
         </div>
       )}
