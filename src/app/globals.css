@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+
+  body {
+    @apply bg-ee-dark text-ee-slate antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-ee-panel/80 backdrop-blur-md border border-ee-border/50 rounded-xl;
+  }
+
+  .circuit-text {
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.35);
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28;
+  }
+
+  .eyebrow {
+    @apply text-ee-cyan text-xs uppercase tracking-widest font-semibold mb-2 block;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight;
+  }
+
+  .nav-link {
+    @apply relative text-ee-slate transition-colors hover:text-white;
+  }
+
+  .nav-link::after {
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-ee-cyan transition-all group-hover:w-full;
+    content: '';
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+canvas {
+  @apply block;
+}
