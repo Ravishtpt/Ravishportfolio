@@ -1,4 +1,4 @@
-# EE Portfolio — 3D Portfolio for Electrical Engineering Students
+# EEE Portfolio — 3D Portfolio for Electrical Engineering Students
 
 A distinctive, opinionated 3D portfolio built with Next.js, React Three Fiber, and Tailwind CSS. Designed specifically for electrical engineering students who want to showcase PCB design, embedded systems, and power electronics work without looking like a generic SaaS template.
 
