@@ -29,17 +29,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-2 tracking-tight leading-[1.1]"
+          className="w-full max-w-full text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-2 tracking-tight leading-tight break-words"
         >
           Ravish M K
         </motion.h1>
 
         {/* DESIGNATION - BELOW NAME */}
+        
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="text-lg md:text-2xl font-medium text-ee-cyan mb-8"
+          className="text-base sm:text-lg md:text-2xl font-medium text-ee-cyan mb-8 px-2"
         >
           Diploma Electrical Engineer
         </motion.p>
